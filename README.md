@@ -13,8 +13,12 @@ This script collects and displays basic information about the Linux system, incl
 * Number of CPU cores
 * Memory usage
 * Disk usage
+* Network status
 * IP address
 * System uptime
+* Shell
+* Bash version
+* Number of running processes
 * Current user
 * Logged-in users
 
@@ -37,6 +41,10 @@ Through this project, I practiced:
 * `xargs`
 * Basic `if/else` statements
 * Redirecting command output
+* Checking network connectivity
+* Environment variables
+* Linux processes
+* Using `ps` and `wc`
 * Testing Bash scripts
 
 ## Requirements
@@ -66,7 +74,6 @@ Run the script:
 ```bash
 ./systeminfo.sh
 ```
-
 ## Example Output
 
 ```text
@@ -79,7 +86,7 @@ SYSTEM
 Hostname        : kali
 Operating System: Kali GNU/Linux Rolling
 Kernel          : 6.19.14+kali-amd64
-Uptime          : up 1 hour, 49 minutes
+Uptime          : up 46 minutes
 
 CPU
 ---
@@ -89,24 +96,34 @@ Cores           : 2
 MEMORY
 ------
 Total           : 1.9Gi
-Used            : 1.5Gi
-Available       : 442Mi
+Used            : 1.4Gi
+Available       : 511Mi
 
 DISK
 ----
 Total           : 79G
 Used            : 18G
 Available       : 58G
-Usage           : 24%
+Usage           : 23%
 
 NETWORK
 -------
+Status          : Network is available
 IP Address      : 10.0.2.15
 
 USERS
 -----
 Current User    : kali
 Logged-in Users : kali
+
+SHELL
+-----
+Shell           : /usr/bin/zsh
+Bash Version    : 5.3.9(1)-release
+
+PROCESSES
+---------
+Running Processes: 191
 ```
 
 ## Project Status
@@ -115,3 +132,7 @@ Completed as a beginner Linux and Bash scripting project.
 
 This project is part of my learning journey in Linux, cloud computing, ethical hacking, and cybersecurity.
 
+
+## Author
+
+Created by Shirin as a part of my journey of learning Linux, Bash scripting, cloud computing, ethical hacking and cybersecurity

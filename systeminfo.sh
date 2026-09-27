@@ -1,5 +1,14 @@
 #!/bin/bash
 
+
+# --------------------------------
+# Linux System Information Script
+# Created by: Shirin
+# Course: BCA
+# Project: Beginner Linux & Bash Project
+# --------------------------------
+
+
 # ========================================
 # Linux System Information Script
 # ========================================
@@ -79,14 +88,17 @@ echo "Usage           : $disk_usage"
 # --------------------
 
 if ip route get 1.1.1.1 > /dev/null 2>&1; then
+    network_status="Network is available"
     ip_address=$(ip route get 1.1.1.1 | awk '{for(i=1;i<=NF;i++) if($i=="src") print $(i+1)}')
 else
+    network_status="Network unavailable"
     ip_address="Network unavailable"
 fi
 
 echo ""
 echo "NETWORK"
 echo "-------"
+echo "Status          : $network_status"
 echo "IP Address      : $ip_address"
 
 # --------------------
@@ -101,3 +113,28 @@ echo "USERS"
 echo "-----"
 echo "Current User    : $current_user"
 echo "Logged-in Users : $logged_users"
+
+# --------------------
+# Shell Information
+# --------------------
+
+shell=$SHELL
+bash_version=$BASH_VERSION
+
+echo ""
+echo "SHELL"
+echo "-----"
+echo "Shell           : $shell"
+echo "Bash Version    : $bash_version"
+
+# --------------------
+# Process Information
+# --------------------
+
+process_count=$(ps aux --no-headers | wc -l)
+
+echo ""
+echo "PROCESSES"
+echo "---------"
+
+echo "Running Processes: $process_count"
